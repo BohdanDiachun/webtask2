@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+{% if not user.is_authenticated %}
+<form method="POST">
+
+  <div class="container-login">
+    {{ form }}
+    <button type="submit">Login</button>
+     </div>
+</form>
+{% endif %}
+{% if user.is_authenticated %}
+    <div class="container-login">
+        <h1>You already authenticated</h1>
+    </div>
+    {% endif %}
+{% endblock %}
+
+
